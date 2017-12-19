@@ -16,7 +16,7 @@
 
     <groupId>org.lockss</groupId>
     <artifactId>com-lyncode-xoai</artifactId>
-    <version>4.1.0-p3-SNAPSHOT</version>
+    <version>4.1.0-p3</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>LOCKSS version of com.lyncode:xoai, now known as dspace:xoai (XOAI : OAI-PMH Java Toolkit)</description>
