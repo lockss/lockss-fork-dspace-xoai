@@ -37,7 +37,8 @@ public class ItemIterator<T> implements Iterator<T> {
         else {
             if (source.endReached()) return false;
             else {
-                items.addAll(source.nextIteration());
+                items = source.nextIteration();
+                position = 0;
                 return hasNext();
             }
         }

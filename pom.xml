@@ -3,8 +3,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>xoai-common</module>
-        <module>xoai-data-provider</module>
+<!--        <module>xoai-common</module> -->
+<!--        <module>xoai-data-provider</module> -->
         <module>xoai-service-provider</module>
     </modules>
 
@@ -14,12 +14,13 @@
         <version>7</version>
     </parent>
 
-    <groupId>com.lyncode</groupId>
-    <artifactId>xoai</artifactId>
-    <version>4.1.0</version>
+    <groupId>org.lockss</groupId>
+    <artifactId>com-lyncode-xoai</artifactId>
+    <version>4.1.0-p4</version>
 
-    <name>XOAI : OAI-PMH Java Toolkit</name>
-    <url>http://www.lyncode.com</url>
+    <name>org.lockss:com-lyncode-xoai</name>
+    <description>LOCKSS version of com.lyncode:xoai, now known as dspace:xoai (XOAI : OAI-PMH Java Toolkit)</description>
+    <url>https://www.lockss.org/</url>
 
     <properties>
         <mockito.version>1.9.5</mockito.version>
@@ -32,6 +33,15 @@
         <lyncode.builder-commons>1.0.2</lyncode.builder-commons>
         <lyncode.xml-io>1.0.3</lyncode.xml-io>
         <lyncode.test-support>1.0.4</lyncode.test-support>
+
+        <!-- LOCKSS specific -->
+        <gitSshUsername>git</gitSshUsername>
+        <gitHost>github.com</gitHost>
+        <gitGroupId>lockss</gitGroupId>
+        <gitProjectId>${project.artifactId}</gitProjectId>
+        <scmConnection>scm:git:git://${gitHost}/${gitGroupId}/${gitProjectId}.git</scmConnection>
+        <scmDeveloperConnection>scm:git:${gitSshUsername}@${gitHost}:${gitGroupId}/${gitProjectId}.git</scmDeveloperConnection>
+        <scmUrl>https://${gitHost}/${gitGroupId}/${gitProjectId}</scmUrl>
     </properties>
 
     <licenses>
@@ -43,11 +53,10 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:lyncode/xoai.git</connection>
-        <developerConnection>scm:git:git@github.com:lyncode/xoai.git</developerConnection>
-        <url>git@github.com:lyncode/xoai.git</url>
-      <tag>xoai-4.1.0</tag>
-  </scm>
+      <connection>${scmConnection}</connection>
+      <developerConnection>${scmDeveloperConnection}</developerConnection>
+      <url>${scmUrl}</url>
+    </scm>
 
     <distributionManagement>
         <snapshotRepository>
@@ -269,5 +278,102 @@
             <organizationUrl>http://www.lyncode.com</organizationUrl>
         </developer>
     </developers>
+    
+    <contributors>
+      <contributor>
+        <name>Thib Guicherd-Callin</name>
+        <email>thib@cs.stanford.edu</email>
+        <organization>LOCKSS Program</organization>
+        <organizationUrl>https://www.lockss.org/</organizationUrl>
+        <properties>
+          <id>thibgc</id>
+        </properties>
+      </contributor>
+      <contributor>
+        <name>Wendell Wilson</name>
+        <email>wendell.wilson@gmail.com</email>
+        <organization>LOCKSS Program</organization>
+        <organizationUrl>https://www.lockss.org/</organizationUrl>
+        <properties>
+          <id>wkwilson</id>
+        </properties>
+      </contributor>
+    </contributors>
 
+  <profiles>
+  
+    <profile>
+      <id>lockss-release</id>
+
+      <build>
+      
+        <plugins>
+      
+          <!--  To deploy to Maven Central; see http://central.sonatype.org/pages/apache-maven.html  -->
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+          
+          <!--  To deploy GPG-signed components to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        
+          <!--  To deploy Source JARs to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        
+          <!--  To deploy Javadoc JARS to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.9.1</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+    
+        </plugins>
+    
+      </build>
+    
+    </profile>
+  
+  </profiles>
+  
 </project>
