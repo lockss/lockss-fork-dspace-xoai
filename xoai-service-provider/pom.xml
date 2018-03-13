@@ -3,14 +3,14 @@
     <parent>
         <artifactId>com-lyncode-xoai</artifactId>
         <groupId>org.lockss</groupId>
-        <version>4.1.0-p3</version>
+        <version>4.1.0-p4-SNPASHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>org.lockss}:com-lyncode-xoai-service-provider</name>
+    <name>org.lockss:com-lyncode-xoai-service-provider</name>
     <artifactId>com-lyncode-xoai-service-provider</artifactId>
     <description>LOCKSS version of com.lyncode:xoai-service-provider, now known as dspace:xoai-service-provider (XOAI Service Provider)</description>
-    <url>https://www.lockss.org/</url>
+    <url>http://www.lyncode.com</url>
 
     <scm>
       <connection>${scmConnection}</connection>

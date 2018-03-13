@@ -20,7 +20,7 @@
 
     <name>org.lockss:com-lyncode-xoai</name>
     <description>LOCKSS version of com.lyncode:xoai, now known as dspace:xoai (XOAI : OAI-PMH Java Toolkit)</description>
-    <url>https://www.lockss.org/</url>
+    <url>http://www.lyncode.com</url>
 
     <properties>
         <mockito.version>1.9.5</mockito.version>
@@ -303,12 +303,13 @@
   <profiles>
   
     <profile>
+    
       <id>lockss-release</id>
 
       <build>
-      
+     
         <plugins>
-      
+     
           <!--  To deploy to Maven Central; see http://central.sonatype.org/pages/apache-maven.html  -->
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
@@ -321,7 +322,7 @@
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
-          
+     
           <!--  To deploy GPG-signed components to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -337,7 +338,7 @@
               </execution>
             </executions>
           </plugin>
-        
+     
           <!--  To deploy Source JARs to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -352,7 +353,7 @@
               </execution>
             </executions>
           </plugin>
-        
+     
           <!--  To deploy Javadoc JARS to Maven Central; see http://central.sonatype.org/pages/apache-maven.html -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -367,11 +368,10 @@
               </execution>
             </executions>
           </plugin>
-    
         </plugins>
-    
+     
       </build>
-    
+     
     </profile>
   
   </profiles>
