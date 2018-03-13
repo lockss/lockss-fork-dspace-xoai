@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>xoai</artifactId>
-        <groupId>com.lyncode</groupId>
-        <version>4.1.0</version>
+        <artifactId>com-lyncode-xoai</artifactId>
+        <groupId>org.lockss</groupId>
+        <version>4.1.0-p4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>XOAI Service Provider</name>
-    <artifactId>xoai-service-provider</artifactId>
+    <name>org.lockss:com-lyncode-xoai-service-provider</name>
+    <artifactId>com-lyncode-xoai-service-provider</artifactId>
+    <description>LOCKSS version of com.lyncode:xoai-service-provider, now known as dspace:xoai-service-provider (XOAI Service Provider)</description>
+    <url>http://www.lyncode.com</url>
+
+    <scm>
+      <connection>${scmConnection}</connection>
+      <developerConnection>${scmDeveloperConnection}</developerConnection>
+      <url>${scmUrl}</url>
+    </scm>
 
     <dependencies>
         <dependency>
             <groupId>com.lyncode</groupId>
             <artifactId>xoai-common</artifactId>
-            <version>${project.version}</version>
+            <version>4.1.0</version>
         </dependency>
 
         <dependency>
@@ -46,7 +54,7 @@
         <dependency>
             <groupId>com.lyncode</groupId>
             <artifactId>xoai-data-provider</artifactId>
-            <version>${project.version}</version>
+            <version>4.1.0</version>
             <scope>test</scope>
         </dependency>
 

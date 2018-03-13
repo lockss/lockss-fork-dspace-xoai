@@ -53,7 +53,7 @@ public class MetadataParser {
 
     private Element parseElement(XmlReader reader) throws XmlReaderException {
         Element element = new Element(reader.getAttributeValue(name()));
-        while (reader.next(startElement(), startField(), endOfMetadata()).current(startElement())) {
+        while (reader.next(startElement(), startField(), endOfMetadata(), endElement()).current(startElement())) {
             element.withElement(parseElement(reader));
         }
 

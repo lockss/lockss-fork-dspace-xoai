@@ -19,6 +19,7 @@ public class MetadataParserTest {
         MetadataSearch<String> searcher = metadata.searcher();
         assertThat(metadata.getElements().size(), equalTo(1));
         assertThat(searcher.findOne("dc.creator"), equalTo("Sousa, Jesus Maria Angélica Fernandes"));
+        assertThat(searcher.findOne("dc.date.submitted"), equalTo("1995"));
         assertThat(searcher.findAll("dc.subject").size(), equalTo(5));
     }
     
