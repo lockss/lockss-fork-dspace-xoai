@@ -3,7 +3,7 @@
     <parent>
         <artifactId>com-lyncode-xoai</artifactId>
         <groupId>org.lockss</groupId>
-        <version>4.1.0-p4-SNPASHOT</version>
+        <version>4.1.0-p4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
