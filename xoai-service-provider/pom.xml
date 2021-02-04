@@ -16,18 +16,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>XOAI Service Provider</name>
-    <artifactId>xoai-service-provider</artifactId>
+    <groupId>org.lockss</groupId>
+    <artifactId>org-dspace-xoai-service-provider</artifactId>
+    <version>4.2.0-p1</version>
 
     <dependencies>
         <dependency>
             <groupId>org.dspace</groupId>
             <artifactId>xoai-common</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.lyncode</groupId>
-            <artifactId>xml-io</artifactId>
+            <groupId>org.lockss</groupId>
+            <artifactId>com-lyncode-xml-io</artifactId>
+            <version>1.0.3-p3</version>
         </dependency>
 
         <dependency>
@@ -54,7 +57,7 @@
         <dependency>
             <groupId>org.dspace</groupId>
             <artifactId>xoai-data-provider</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
             <scope>test</scope>
         </dependency>
 

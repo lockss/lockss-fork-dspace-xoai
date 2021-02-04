@@ -12,7 +12,9 @@
             <field name="value">Sousa, Jesus Maria Angélica Fernandes</field>
         </element>
         <element name="date">
-            <field name="value">1995</field>
+            <element name="submitted">
+                <field name="value">1995</field>
+            </element>
         </element>
         <element name="identifier">
             <field name="value">http://www.rcaap.pt/detail.jsp?id=oai:digituma.uma.pt:10400.13/9</field>

@@ -17,9 +17,9 @@
     </modules>
 
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <groupId>org.lockss</groupId>
+        <artifactId>lockss-parent-pom</artifactId>
+        <version>1.12.0</version>
     </parent>
 
     <groupId>org.dspace</groupId>
